@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>update</title>
+        <link rel="stylesheet" href="../static/stylesheet.css">
+    </head>
+    <body>
+        <div class="pos">
+            <header><p id="ha">Contact Us +9196366 20000/01 | suh@hospital.com</p></header>
+            <div id="hdr">
+            <p id="b" ><span style="color:#2fa5eb ;">SUPER</span> Hospital</p>
+            <nav >
+                <a href="{{url_for('home')}}">HOME</a>
+                <a href="{{url_for('about')}}">ABOUT US</a>
+                <a href="{{url_for('services')}}">SERVICES</a>
+                <a href="{{url_for('doctor')}}">DOCTORS</a>
+                <a href="{{url_for('contact')}}">CONTACT US</a>
+                <a href="{{url_for('display')}}">APPOINTMENTS</a>
+            </nav>
+            </div>
+        </div>
+        <main class="hm">
+            <form action="{{url_for('update')}}" method="post">
+                <h2 id="fh">Make an Appointment</h2>
+            <table class="appform" width="50%" cellpadding="20" cellspacing="0" style="margin: right;padding-left: 50%;" >
+                
+                <input type="hidden" name="id" id="id" class="input" required value="{{data[0]}}">
+                <tr>
+                <td><input type="text" name="fname" id="fname" class="input" placeholder="First Name" required value="{{data[1]}}"></td>
+                <td><input type="text" name="lname" id="lname" class="input" placeholder="Last Name" required value="{{data[2]}}"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="email" id="email" class="input" placeholder="Email id" required value="{{data[3]}}"></td>
+                    <td><input type="text" name="mob" id="mob" class="input" placeholder="Mobile No" required value="{{data[4]}}"></td>
+                </tr>
+                <tr>
+                    <td><select name="sex" id="sex" class="input1"  value="{{data[5]}}">
+                        <option value="sex">--SEX--</option>
+                        <option value="male">--MALE--</option>
+                        <option value="female">--FEMALE--</option>
+                    </select></td>
+                    <td><input type="text" name="app" id="app" class="input" placeholder="Appointment Date" value="{{data[6]}}"></td>
+                </tr>
+                <tr><td colspan="2"><textarea name="text" id="text" rows="5" cols="65">{{data[7]}}</textarea></td></tr>
+                <tr><td colspan="2" align="center"><input type="submit" value="submit" class="submit"></td></tr>
+                
+            </table>
+            </form>
+            </main>
+            <footer >
+                <p id="f">
+                    &copy;SUPER Hospital,site designed & developed by MITRAz
+                </p>
+            </footer>
+    </body>
+</html>

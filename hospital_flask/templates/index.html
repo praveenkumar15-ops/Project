@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Hospital</title>
+        <link rel="stylesheet" href="../static/stylesheet.css">
+        <style>
+
+        </style>
+    </head>
+    <body>
+        <section>
+        
+        <div class="pos">
+        <header><p id="ha">Contact Us +9196366 20000/01 | suh@hospital.com</p></header>
+        <div id="hdr">
+        <p id="b" ><span style="color:#2fa5eb ;">SUPER</span> Hospital</p>
+        <nav >
+            <a href="{{url_for('home')}}">HOME</a>
+            <a href="{{url_for('about')}}">ABOUT US</a>
+            <a href="{{url_for('services')}}">SERVICES</a>
+            <a href="{{url_for('doctor')}}">DOCTORS</a>
+            <a href="{{url_for('contact')}}">CONTACT US</a>
+            <a href="{{url_for('display')}}">APPOINTMENTS</a>
+        </nav>
+        </div>
+        </div>
+        <div id="dhm">
+        <main class="hm">
+            <div id="img">
+                <div id="opt"><br><br><br><br><br>
+                    <p id="h3">Health Care Servives</p>
+                    <p>We care about your health</p><br><br><br><br><br><br>
+                </div> 
+            </div>
+        </main>
+        
+        </div> 
+        
+        <main class="hm">
+        <div id="home">
+            <br><br><p ><b>We are medical center</b></p><br>
+            <br>
+            <h3> We Have Medical Plan Optional for You!</h3><br>
+            <p id="p" class="para">Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                Porro adipisci amet fugiat explicabo libero quibusdam consectetur? Ipsa hic 
+                facilis quas, velit, quasi totam numquam natus enim, dicta nihil beatae neque</p>
+
+            <p id="p" class="para">Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                Porro adipisci amet fugiat explicabo libero quibusdam consectetur? Ipsa hic 
+                facilis quas, velit, quasi totam numquam natus enim, dicta nihil beatae neque</p><br>
+
+            <p id="p" class="para">Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                Porro adipisci amet fugiat explicabo libero quibusdam consectetur? Ipsa hic 
+                facilis quas, velit, quasi totam numquam natus enim, dicta nihil beatae
+                 nequefacilis quas, velit, quasi totam numquam natus enim, dicta nihil beatae neque</p><br>
+
+            <ul id="p">
+                <li>Lorem ipsum dolor sit amet</li>
+                <li>consectetur adipisicing elit.</li>
+                <li>Porro adipisci amet fugiat explicabo libero quibusdam consectetur</li>
+                <li>Ipsa hic facilis quas, velit</li>
+                <li>quasi totam numquam natus enim, dicta nihil beatae neque</li>
+            </ul>
+        </div><br>
+        </main>
+        <hr><br>
+        <main class="hm">
+        <form action="{{url_for('appointment')}}" method="post">
+            <h2 id="fh">Make an Appointment</h2>
+        <table class="appform" width="50%" cellpadding="20" cellspacing="0" style="margin: right;padding-left: 50%;" >
+            <tr>
+            <td><input type="text" name="fname" id="fname" class="input" placeholder="First Name" required></td>
+            <td><input type="text" name="lname" id="lname" class="input" placeholder="Last Name" required></td>
+            </tr>
+            <tr>
+                <td><input type="text" name="email" id="email" class="input" placeholder="Email id" required></td>
+                <td><input type="text" name="mob" id="mob" class="input" placeholder="Mobile No" required></td>
+            </tr>
+            <tr>
+                <td><select name="sex" id="sex" class="input1" >
+                    <option value="sex">--SEX--</option>
+                    <option value="male">--MALE--</option>
+                    <option value="female">--FEMALE--</option>
+                </select></td>
+                <td><input type="text" name="app" id="app" class="input" placeholder="Appointment Date"></td>
+            </tr>
+            <tr><td colspan="2"><textarea name="text" id="text" rows="5" cols="65"></textarea></td></tr>
+            <tr><td colspan="2" align="center"><input type="submit" value="submit" class="submit"></td></tr>
+        </table>
+        </form>
+        </main>
+        </section> 
+    <footer >
+        <p id="f">
+            &copy;SUPER Hospital,site designed & developed by MITRAz
+        </p>
+    </footer>
+    </body>
+</html>
