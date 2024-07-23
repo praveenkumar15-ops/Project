@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager - Priorities</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Task Manager - Priorities</h1>
+    
+    <form action="{{ url_for('add_priority') }}" method="post">
+        <label for="priority">Select Priority:</label>
+        <select id="priority" name="priority" required>
+            <option value="High">High</option>
+            <option value="Medium">Medium</option>
+            <option value="Low">Low</option>
+        </select>
+        <button type="submit">Add</button>
+    </form>
+    
+    <h2>Priorities</h2>
+    <ul>
+        {% for priority in priorities %}
+            <li>{{ priority }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

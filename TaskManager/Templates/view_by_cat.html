@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="../static/style.css">
+    <script>
+        function confirmDelete(event) {
+            event.preventDefault();
+            var confirmation = confirm("Are you sure you want to delete this item?");
+            if (confirmation) {
+                event.target.form.submit();
+            }
+        }
+    </script>
+    <style>.main-container {
+        display: flex;
+        flex-direction: row;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .sidebar {
+        width: 200px;
+        background-color: #333;
+        padding: 15px;
+        height: 100vh;
+        position: fixed;
+    }
+    
+    .sidebar a {
+        display: block;
+        color: white;
+        padding: 10px;
+        text-decoration: none;
+    }
+    
+    .sidebar a:hover {
+        background-color: #575757;
+    }
+    
+    .content {
+        margin-left: 220px;
+        padding: 20px;
+        width: 100%;
+    }
+    
+    h1, h2 {
+        color: #333;
+    }
+    
+    form {
+        margin-bottom: 20px;
+    }
+    
+    label {
+        display: block;
+        margin-top: 10px;
+        font-weight: bold;
+    }
+    
+    select, button {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+    
+    button {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+    }
+    
+    button:hover {
+        background-color: #45a049;
+    }
+    
+    .styled-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 25px 0;
+        font-size: 18px;
+        text-align: left;
+    }
+    
+    .styled-table thead tr {
+        background-color: #4CAF50;
+        color: white;
+    }
+    
+    .styled-table th, .styled-table td {
+        padding: 12px 15px;
+    }
+    
+    .styled-table tbody tr {
+        border-bottom: 1px solid #ddd;
+    }
+    
+    .styled-table tbody tr:nth-of-type(even) {
+        background-color: #f3f3f3;
+    }
+    
+    .styled-table tbody tr:last-of-type {
+        border-bottom: 2px solid #4CAF50;
+    }
+    
+    .styled-table tbody tr:hover {
+        background-color: #f1f1f1;
+    }
+    footer {
+        text-align: center;
+        padding: 10px;
+        background-color: lightblue;
+        color: white;
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+    }
+    </style>
+    
+</head>
+<body>
+    <div class="header-container">
+        <img src="../static/uploads/logo.jpeg" alt="Task Manager Logo">
+        <header>Task Management</header>
+    </div>
+    <div class="main-container">
+        <div class="sidebar">
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('dashboard') }}">Dashboard</a>
+            <a href="{{ url_for('add_task') }}">Add Task</a>
+            <a href="{{ url_for('category_insert') }}">Add Category</a>
+            <a href="{{ url_for('view_by_cat') }}">View by Category</a>
+            <a href="{{ url_for('view_by_pri') }}">View by Priority</a>
+            <a href="{{ url_for('view_due_dates') }}">View_by_duedates</a>
+            <a href="{{ url_for('logout') }}">Logout</a>
+        </div>
+        <div class="content">
+            <h1>View Tasks by Category</h1>
+    <form method="post" action="{{ url_for('view_by_cat') }}">
+        <label for="category_id">Select Category:</label>
+        <select name="category_id" id="category_id" required>
+            {% for category in categories %}
+                <option value="{{ category[0] }}">{{ category[1] }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">View Tasks</button>
+    </form>
+
+    {% if tasks %}
+    <h2>Tasks in Selected Category</h2>
+    <table class="styled-table">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for task in tasks %}
+                <tr>
+                    <td>{{ task[2] }}</td>
+                    <td>{{ task[3] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% else %}
+    <p>No tasks found in this category.</p>
+{% endif %}
+
+<p>{{ msg }}</p>
+
+               
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p id="f">
+            &copy; Task Management, site designed & developed by Praveen Kumar
+        </p>
+    </footer>
+</body>
+</html>

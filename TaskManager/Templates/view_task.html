@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Task</title>
+    <link rel="stylesheet" href="../static/style.css">
+    
+    <style>
+        .main-container {
+            display: flex;
+            flex-direction: row;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .sidebar {
+            width: 200px;
+            background-color: #333;
+            padding: 15px;
+            height: 100vh;
+            position: fixed;
+        }
+        
+        .sidebar a {
+            display: block;
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+        }
+        
+        .sidebar a:hover {
+            background-color: #575757;
+        }
+        
+        .container {
+            margin-left: 220px;
+            padding: 20px;
+            width: calc(100% - 220px);
+        }
+        
+        h2 {
+            color: #333;
+        }
+        
+        h5 {
+            color: #4CAF50;
+            font-size: 22px;
+        }
+        
+        p {
+            color: #555;
+            font-size: 16px;
+            margin: 5px 0;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: lightblue;
+            color: white;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+       
+    </style>
+</head>
+<body>
+    <div class="header-container">
+        <img src="../static/uploads/logo.jpeg" alt="Task Manager Logo">
+        <header>Task Management</header>
+    </div>
+    <div class="main-container">
+        <div class="sidebar">
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('dashboard') }}">Dashboard</a>
+            <a href="{{ url_for('add_task') }}">Add Task</a>
+            <a href="{{ url_for('category_insert') }}">Add Category</a>
+            <a href="{{ url_for('view_by_cat') }}">View by Category</a>
+            <a href="{{ url_for('view_by_pri') }}">View by Priority</a>
+            <a href="{{ url_for('view_due_dates') }}">View_by_duedates</a>
+            <a href="{{ url_for('logout') }}">Logout</a>
+        </div>
+    <div class="container">
+        <main>
+            <div>
+                <h2>Task Details:</h2>
+                <div>
+                    <div>
+                        <h5>{{ task[2] }}</h5> <!-- Assuming task[2] is the title -->
+                        <p>{{ task[3] }}</p> <!-- Assuming task[3] is the description -->
+                        <p>{{ task[4] }}</p>
+                        <p>{{ task[5] }}</p>
+                        <p>{{ task[6] }}</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <p id="f">
+                &copy;Task Management, site designed & developed by Praveen Kumar
+            </p>
+        </footer>
+    </div>
+</body>
+
+</html>

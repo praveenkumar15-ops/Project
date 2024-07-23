@@ -1,0 +1,154 @@
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background: lightblue;
+    position: sticky;
+}
+.header-container img {
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+    margin-top: 0px;
+    opacity: 0.9;
+}
+.header-container header {
+    font-size: 3em;
+}
+body {
+    background-repeat: repeat-y repeat-x no-repeat;
+    opacity: 0.8;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+.main-container {
+    display: flex;
+    width: 100%;
+    
+}
+.sidebar {
+    width: 200px;
+    background:rgb(69, 67, 67);
+    color: white;
+    height: calc(100vh - 130px); /* Adjust this value based on header height */
+    padding-top: 20px;
+}
+.sidebar a {
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    color: white;
+}
+.sidebar a:hover {
+    background: #575757;
+}
+.content {
+    flex-grow: 1;
+    padding: 20px;
+    margin-top: -20px;
+}
+.navbar a {
+    text-align: left;
+}
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: 'Arial', sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+.styled-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+}
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+footer {
+    text-align: center;
+   
+    background: lightblue;
+    padding: 10px;
+}
+/* styles.css */
+
+
+
+
+.border {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 50px auto;
+    background-color: #fff;
+    width: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    margin: 0;
+    color: #4CAF50;
+}
+
+.word {
+    color: #333;
+}
+
+.textbox {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn:hover {
+    background-color: #45a049;
+}
+
+.bottom {
+    color: #4CAF50;
+}
+
+.bottom a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+.bottom a:hover {
+    text-decoration: underline;
+}
+
